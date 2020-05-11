@@ -10,4 +10,11 @@ export const deletePost = index => ({
   payload: index
 });
 
-// update post (pass it an id and body)
+export const UPDATE_POST = 'UPDATE_POST';
+export const updatePost = ({ id, body }) => ({
+  type: UPDATE_POST,
+  payload: {
+    id, 
+    body 
+  }
+});
