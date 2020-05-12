@@ -1,4 +1,3 @@
-// get all posts
 export const getPosts = state => state;
 
-// get a post by index
+export const getPostByIndex = (state, index) =>  getPosts(state).find((_, i) => i === index);

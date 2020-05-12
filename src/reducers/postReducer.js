@@ -9,9 +9,9 @@ export default function reducer(state = initialState, action) {
     case DELETE_POST:
       return state.filter((_, index) => index !== action.payload);
     case UPDATE_POST: 
-      return state.map((blog, index) => {
+      return state.map((post, index) => {
         if(index === action.payload.index) return action.payload.post;
-        return blog;
+        return post;
       });
     default:
       return state;
