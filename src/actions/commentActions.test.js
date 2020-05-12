@@ -1,4 +1,4 @@
-import { addComment, ADD_COMMENT } from './commentActions';
+import { addComment, ADD_COMMENT, deleteComment, DELETE_COMMENT } from './commentActions';
 
 describe('comment actions', () => {
   it('creates an ADD_COMMENT action', () => {
@@ -12,4 +12,16 @@ describe('comment actions', () => {
       }
     });
   });
+
+  it('creates a DELETE_COMMENT action', () => {
+    const action = deleteComment(1, 2);
+
+    expect(action).toEqual({
+      type: DELETE_COMMENT,
+      payload: {
+        index: 1,
+        postIndex: 2
+      }
+    })
+  })
 });
