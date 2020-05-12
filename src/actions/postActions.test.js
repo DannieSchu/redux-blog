@@ -26,16 +26,19 @@ describe('post actions', () => {
   });
 
   it('creates an UPDATE_POST action', () => {
-    const action = updatePost({
-      id: '2tg32',
+    const action = updatePost(4, {
+      title: 'some title',
       body: 'grwh vg00 jno noregr-rsib josbnvs nvldsd 0fijdosj'
     });
 
     expect(action).toEqual({
       type: UPDATE_POST,
       payload: {
-        id: '2tg32',
-        body: 'grwh vg00 jno noregr-rsib josbnvs nvldsd 0fijdosj'
+        index: 4,
+        post: {
+          title: 'some title',
+          body: 'grwh vg00 jno noregr-rsib josbnvs nvldsd 0fijdosj'
+        }
       }
     });
   });
